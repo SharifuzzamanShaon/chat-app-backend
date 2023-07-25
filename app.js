@@ -13,7 +13,7 @@ const Chat = require('./models/ChatModel');
 dotenv.config();
 
 app.use(cors({
-    origin: 'http://localhost:3660'
+    origin: 'https://steady-torrone-66e404.netlify.app'
 }))
 
 
