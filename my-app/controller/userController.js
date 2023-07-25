@@ -1,0 +1,26 @@
+const User = require('../models/UserModel')
+
+const allUsers = async (req, res) => {
+    const keyword = req.query.search
+        ? {
+
+            $or: [
+                { name: { $regex: req.query.search, $options: 'i' } },
+                { email: { $regex: req.query.search, $options: 'i' } }
+            ]
+        } : {}
+
+    const users = await User.find(keyword).find({ _id: { $ne: req.userInfo.id } })
+    const allUser = users.map((item) => {
+        return {
+            _id: item._id,
+            name: item.name,
+            email: item.email,
+            picture: item.picture
+        }
+    })
+
+    return res.status(200).json({ allUser });
+}
+
+module.exports = allUsers
