@@ -12,7 +12,9 @@ const authenticate = require('./middleware/auth');
 const Chat = require('./models/ChatModel');
 dotenv.config();
 
-app.use(cors())
+app.use(cors({
+    origin: "*",
+}))
 
 
 app.use(routes)
