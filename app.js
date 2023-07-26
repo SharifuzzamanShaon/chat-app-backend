@@ -38,7 +38,7 @@ app.use((error, req, res, next) => {
     res.status(status).send(message)
 })
 
-const PORT = "https://chat-app-backend-lzxp.onrender.com" || 5000
+const PORT = process.env.PORT || 5000
 const server = app.listen(PORT, async () => {
     await connectDB();
 })
