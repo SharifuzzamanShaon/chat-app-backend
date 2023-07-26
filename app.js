@@ -13,7 +13,7 @@ const Chat = require('./models/ChatModel');
 dotenv.config();
 
 app.use(cors({
-    origin: 'https://cosmic-puffpuff-852798.netlify.app/'
+    origin: 'https://cosmic-puffpuff-852798.netlify.app'
 }))
 
 
