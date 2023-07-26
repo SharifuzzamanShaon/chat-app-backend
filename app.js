@@ -13,7 +13,7 @@ const Chat = require('./models/ChatModel');
 dotenv.config();
 
 app.use(cors({
-    origin: 'https://steady-torrone-66e404.netlify.app'
+    origin: 'https://cosmic-puffpuff-852798.netlify.app/'
 }))
 
 
@@ -46,7 +46,7 @@ const server = app.listen(PORT, async () => {
 const io = require("socket.io")(server, {
     pingTimeout: 60000,
     cors: {
-        origin: "https://steady-torrone-66e404.netlify.app",
+        origin: "https://cosmic-puffpuff-852798.netlify.app/",
     }
 })
 
